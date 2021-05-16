@@ -7,12 +7,12 @@ const supertest = require('supertest');
 const request = supertest(server.app);
 
 describe('server', () => {
-  it('should get 404 status', async () => {
+  it('should get 404  ', async () => {
     const response = await request.get('/foo');
     expect(response.status).toBe(404);
   });
 
-  it('should get a wecome message', async () => {
+  it('should get a server home page', async () => {
     //arrange
     let route = '/';
     //act
@@ -22,7 +22,7 @@ describe('server', () => {
     expect(response.text).toBe('welcome to my server');
   });
 
-  it('should get an errore', async () => {
+  it('should get an error route', async () => {
     const response = await request.get('/error');
     expect(response.status).toEqual(500);
   });
