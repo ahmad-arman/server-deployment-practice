@@ -18,6 +18,12 @@ app.get('/error',(req,res)=>{
 app.use(errHandler);
 app.use('*',notFoundHandler);
 
+/**
+ * @description.takes a number of port
+ * @param {number} port  the port is 3000
+ * 
+ * @return console log the port
+ */
 function start(port){
   app.listen(port , ()=>{
     console.log(`your server on port ${port} `);
